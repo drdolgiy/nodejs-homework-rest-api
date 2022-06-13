@@ -1,5 +1,4 @@
 const express = require('express')
-
 const router = express.Router()
 const {schemaCreate, schemaPatch} = require('../../models/contacts')
 const {validateRequest} = require('../../middlewares/validateRequest')
