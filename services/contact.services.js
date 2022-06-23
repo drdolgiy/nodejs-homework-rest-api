@@ -7,14 +7,14 @@ const listContacts = async () => {
 
 const getContactById = async (contactId) => {
   return Contact.findById(contactId);
-}
+} 
 
 const removeContact = async (contactId) => {
 return Contact.findByIdAndDelete(contactId)
 }
 
-const addContact = async (body) => {
-    return Contact.create(body);      
+const addContact = async (body, id) => {
+    return Contact.create({...body, owner: id});      
 }
 
 const updateContact = async (contactId, body) => {
