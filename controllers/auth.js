@@ -6,7 +6,6 @@ const userServices = require("../services/user.services");
 const register = async (req, res, next) => {
   try {
     const user = await authServices.registerUser(req.body);
-    console.log("user", user);
     await emailServices.sendEmail(user.email, user.verificationToken);
 
     res.status(201).json({
